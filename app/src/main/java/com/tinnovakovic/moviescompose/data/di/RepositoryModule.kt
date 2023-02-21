@@ -1,6 +1,8 @@
 package com.tinnovakovic.moviescompose.data.di
 
+import com.tinnovakovic.moviescompose.data.repository.MovieRepoImpl
 import com.tinnovakovic.moviescompose.data.repository.MyRepoImpl
+import com.tinnovakovic.moviescompose.domain.repository.MovieRepo
 import com.tinnovakovic.moviescompose.domain.repository.MyRepo
 import dagger.Binds
 import dagger.Module
@@ -17,4 +19,10 @@ abstract class RepositoryModule {
     abstract fun bindMyRepo(
         myRepo: MyRepoImpl
     ): MyRepo
+
+    @Binds
+    @Singleton
+    abstract fun bindMovieRepo(
+        movieRepo: MovieRepoImpl
+    ): MovieRepo
 }
